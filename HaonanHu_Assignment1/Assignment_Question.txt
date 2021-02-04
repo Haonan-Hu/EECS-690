@@ -1,19 +1,17 @@
 a. Why is the value of the Accuracy different than the one given for NB in Step 5.4?
-    Because the accuracy rate calculated is independent from the modeling choosing.
-    Meaning the random seed could be different for calculating classification accuracy 
-    and modeling test accuracy.
+    The reason is that we use 2-fold rather than 10-fold, which results we have different size for both training set and test set.
     
 b. Why is the confusion matrix different than the one given in Step 6.2?
-    Because of the random seed, each confusion matrix generated should be different unless
-    the seed is fixed. 
+    It is because we are using 2-fold rather than 10-fold, which results we have difference size for both training
+    set and test set.
 
 c. Why are the P, R, and F1 scores different than those given in Step 6.2?
-    As mentioned before, the different comes from the random seed number that is used on
-    data modeling.
+    Firstly, we are making prediction using NB model, rather than SVC model, secondly, we have 50/50 split of
+    training set and test set.
 
 d. How many samples were in the training set?
-    In the train_test_split function, we specified we use 20% of sample as test set, which will
-    leave 80% of samlpe as training set, results 150 * 0.8 = 120 training set size.
+    In the train_test_split function, we specified we use 50% of sample as test set, which will
+    leave 50% of samlpe as training set, results 150 * 0.5 = 75 training set size.
 
 e. How many samples were in the test set?
-    150 * 0.2 = 30 test set
+    150 * 0.5 = 75 test set

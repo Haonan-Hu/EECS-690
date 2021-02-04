@@ -37,7 +37,7 @@ plt.show()
 pd.array = df.values
 X = pd.array[:,0:4]  # slicing a 2d array with first 4 items in each dimension
 Y = pd.array[:,4]  # slicing a 2d array with 5th item left in each dimension
-X_train, X_validation, Y_train, Y_validation = train_test_split(X, Y, test_size=0.2)  # test_size is 20% of totol samples
+X_train, X_validation, Y_train, Y_validation = train_test_split(X, Y, test_size=0.5, random_state=1)  # test_size is 50% of totol samples
 
 # Use of stratified 10-fold cross validation to estimate accuracy
 # meaning of split dataframe into 10 parts, train on 9 and test on 1 and
@@ -57,7 +57,7 @@ models.append(('SVM', SVC(gamma='auto')))
 result = []
 names = []
 for name, model in models:
-    kfold = StratifiedKFold(n_splits=10, random_state=1, shuffle=True)
+    kfold = StratifiedKFold(n_splits=2, random_state=1, shuffle=True)
     cv_results = cross_val_score(model, X_train, Y_train, cv=kfold, scoring='accuracy')
     result.append(cv_results)
     names.append(name)
@@ -71,7 +71,7 @@ plt.title('Algorithm Comparison')
 plt.show()
 
 # making prediction
-predict_model = SVC(gamma='auto')
+predict_model = GaussianNB()  # Choose NB model, although LDA has better performance
 predict_model.fit(X_train, Y_train)
 prediction = predict_model.predict(X_validation)
 
