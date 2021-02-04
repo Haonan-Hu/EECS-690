@@ -37,7 +37,7 @@ plt.show()
 pd.array = df.values
 X = pd.array[:,0:4]  # slicing a 2d array with first 4 items in each dimension
 Y = pd.array[:,4]  # slicing a 2d array with 5th item left in each dimension
-X_train, X_validation, Y_train, Y_validation = train_test_split(X, Y, test_size=0.2)
+X_train, X_validation, Y_train, Y_validation = train_test_split(X, Y, test_size=0.2)  # test_size is 20% of totol samples
 
 # Use of stratified 10-fold cross validation to estimate accuracy
 # meaning of split dataframe into 10 parts, train on 9 and test on 1 and
