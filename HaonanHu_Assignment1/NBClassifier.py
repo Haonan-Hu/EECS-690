@@ -35,40 +35,40 @@ plt.show()
 
 # Split the data
 pd.array = df.values
-X = pd.array[:,0:4]  # slicing a 2d array with first 4 items in each dimension
-Y = pd.array[:,4]  # slicing a 2d array with 5th item left in each dimension
+X = pd.array[:, 0:4]  # slicing a 2d array with first 4 items in each dimension
+Y = pd.array[:, 4]  # slicing a 2d array with 5th item left in each dimension
 X_train, X_validation, Y_train, Y_validation = train_test_split(X, Y, test_size=0.5, random_state=1)  # test_size is 50% of totol samples
 
-# Use of stratified 10-fold cross validation to estimate accuracy
-# meaning of split dataframe into 10 parts, train on 9 and test on 1 and
-# repeat for all combinations of train-test splits
-# set the random seed to a fixed number to ensure each algorithm is evaluated on same splits
+# # Use of stratified 10-fold cross validation to estimate accuracy
+# # meaning of split dataframe into 10 parts, train on 9 and test on 1 and
+# # repeat for all combinations of train-test splits
+# # set the random seed to a fixed number to ensure each algorithm is evaluated on same splits
 
-# Building models
-models = []
-models.append(('LR', LogisticRegression(solver='liblinear', multi_class='ovr')))
-models.append(('LDA', LinearDiscriminantAnalysis()))
-models.append(('KNN', KNeighborsClassifier()))
-models.append(('CART', DecisionTreeClassifier()))
-models.append(('NB', GaussianNB()))
-models.append(('SVM', SVC(gamma='auto')))
+# # Building models
+# models = []
+# models.append(('LR', LogisticRegression(solver='liblinear', multi_class='ovr')))
+# models.append(('LDA', LinearDiscriminantAnalysis()))
+# models.append(('KNN', KNeighborsClassifier()))
+# models.append(('CART', DecisionTreeClassifier()))
+# models.append(('NB', GaussianNB()))
+# models.append(('SVM', SVC(gamma='auto')))
 
-# evaluate modes
-result = []
-names = []
-for name, model in models:
-    kfold = StratifiedKFold(n_splits=2, random_state=1, shuffle=True)
-    cv_results = cross_val_score(model, X_train, Y_train, cv=kfold, scoring='accuracy')
-    result.append(cv_results)
-    names.append(name)
-    print("%s: %f (%f)" % (name, cv_results.mean(), cv_results.std()))
+# # evaluate modes
+# result = []
+# names = []
+# for name, model in models:
+#     kfold = StratifiedKFold(n_splits=10, random_state=1, shuffle=True)
+#     cv_results = cross_val_score(model, X_train, Y_train, cv=kfold, scoring='accuracy')
+#     result.append(cv_results)
+#     names.append(name)
+#     print("%s: %f (%f)" % (name, cv_results.mean(), cv_results.std()))
 
-print("")
+# print("")
 
-# comparing algorithms with whisker plot
-plt.boxplot(result, labels=names)
-plt.title('Algorithm Comparison')
-plt.show()
+# # comparing algorithms with whisker plot
+# plt.boxplot(result, labels=names)
+# plt.title('Algorithm Comparison')
+# plt.show()
 
 # making prediction
 predict_model = GaussianNB()  # Choose NB model, although LDA has better performance
