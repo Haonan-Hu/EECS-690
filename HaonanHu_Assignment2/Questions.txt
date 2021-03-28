@@ -1,0 +1,23 @@
+a. Based on accuracy which model is the best one?
+    LDA has the highest accuracy with 97.33%
+b. For each of the 6 other models, explain why you think it does not perform
+as well as the best one.
+    2nd best: Linear Regression (96.67%)
+        The date seems fit well with linear regression, because whiling we are identifying iris species, we use only 4 input variables, which probably
+        could lead to the data fit well linearly.
+    3rd best: Polynomial Regression degree of 2 (96.67%)
+        The polynomial regression degree of 2 seems to work as well, the data may
+        be conincidently fit polynominal regression degree of 2 model.
+    4th best: Quadratic Discriminant Analysis (96%)
+        With more flexibiliy and gaussian distribution assumption, QDA seems work
+        , just not as well as the top 3 models. The reason it is not as good as LDA
+        might be because the data are distributed more linearly.
+    5th best: Naive Bayes (96%)
+        Naive Bayes assumes data are normally distributed whereas the real world
+        data may not exactly fit gaussian distribution, thats why it may not perfrom
+        so well.
+    6th best: KNeighbor classifier (94%)
+        KNN seems work poorly for multi-features situation, I think this will be why
+        it is not suitable for this data set.
+    7th best: Polynomial Regression of degree 3 (92%)
+        The data does not fit polynomial regression of degree of 3 seems like, thats why it has the lowest accuracy.

@@ -1,0 +1,15 @@
+1. Based on accuracy which dimensionality reduction method, PCA, simulate annealing, or the genetic algorithm worked the best?
+    Genetic algorithm and simulate annealing both provide 95.3% of accuracy
+2. For each of the two other methods, explain why you think it did not perform as well as the best one.
+    For PCA, the reason is that PCA is a non-parametric analysis and assumes the features are linearly
+    correlated
+3. Did the best dimensionality reduction method produce a better accuracy than using none (i.e. the results of Part 1)? Explain possible reasons why it did or did not.
+    It does provide better accuracy. The reason is at the end of GA algorithm generation, you will choose best
+    of 5 set, so the result will only getting better and better
+4. Did Part 2 produce the same set of best features as Part 3? Explain possible reasons why it did or did not.
+    No. As said before, PCA is non-parametric analysis and assumes the features are linearly
+    correlated
+5. Did Part 2 produce the same set of best features as Part 4? Explain possible reasons why it did or did not.
+    No. PCA only transform features, we only select features that gives highest accuracy based on 4 transformed features. 
+6. Did Part 3 produce the same set of best features as Part 4? Explain possible reasons why it did or did not.
+    No. Althou they have the same accuracym but they are using different set. SA doesn’t jump very far and may still find a sub-optimum solution, however, GA will eventually check every possible permutation of features and provide best possible solution

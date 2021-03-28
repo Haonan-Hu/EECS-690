@@ -1,0 +1,47 @@
+Answers to the following questions for CompareMLModelsV2:
+    a. Based on accuracy which model is the best one?
+        Linear Discriminant Analysis and Neural Network with (97.333%)
+    b. For each of the 11 other models, explain why you think it does not
+    perform as well as the best one.
+        2nd: Liner regression (96.667%)
+            The data seems fit well with linear regression, because whiling we are identifying iris species, we use only 4 input variables, which probably
+            could lead to the data fit well linearly.
+        3rd: Polynomial Regression degree of 2 (96.667%)
+            The polynomial regression degree of 2 seems to work as well, the data may
+            be conincidently fit polynominal regression degree of 2 model.
+        4th: Naive Bayes (96%)
+            Naive Bayes assumes data are normally distributed whereas the real world
+            data may not exactly fit gaussian distribution, thats why it may not perfrom so well.
+        5th: Quadratic Discriminant Analysis (96%)
+            With more flexibiliy and gaussian distribution assumption, QDA seems work
+            , just not as well as the top 3 models. The reason it is not as good as LDA
+            might be because the data are distributed more linearly.
+        6th: Extra Tree (95.334%)
+            Since Extra Tree is more randomized, so the output will vary because it is hard to return optimal tree. 
+        7th: Linear SVC (94%)
+            Linear SVC works by drawing a line between the two clusters and then using that line to predict. since linear lines are not flexable enough but overall data fits linearly.
+        8th: KNeighbor (94%)
+            KNN seems work poorly for multi-features situation, I think this will be why it is not suitable for this data set.
+        9th: Decision Tree (92.667%)
+            The output of Decision tree will vary, it is not fixed, because decision tree is not guaranteed to return an optimal tree
+        10th: Random Forest (92.667%)
+            Random Forest utilize multiple decision trees to predict output between different classifications, but since it is using tree, so it is not likely to return optimal tree every time.
+        11th: Polynomial Regression degree of 3 (92%)
+            The data does not fit polynomial regression of degree of 3 seems like, thats why it has the lowest accuracy.
+Answers to the following questions about dbn.py:
+    a. Does the program use k-fold cross-validation?
+        No
+    b. What percentage of the data set was used to train the DBN model?
+        80%
+    c. How many samples are in the test set?
+        360
+    d. How many samples are in the training set?
+        1437
+    e. How many features are in test set?
+        64
+    f. How many features are in the training set?
+        64
+    g. How many classes are there?
+        10
+    h. List the classes.
+        [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
