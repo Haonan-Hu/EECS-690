@@ -267,16 +267,12 @@ def unique_accuracy(accuracy_list):
 
 # Union two list while w/o replication but maintaining ordering
 def union(list1, list2):
-    result = list(set(list1) | set(list2))
-    # print('in union', list1, list2, result)
-    return result
+    return list(set(list1) | set(list2))
 
 
 # Intersection of two lists
 def intersection(list1, list2):
-    result = list(set(list1) & set(list2))
-    # print('in intersection', list1, list2, result)
-    return result
+    return list(set(list1) & set(list2))
 
 
 # fit model with 2-fold cross validation
