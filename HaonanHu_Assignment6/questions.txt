@@ -1,0 +1,7 @@
+1. According to your results, are there 3 species of iris represented in the
+iris data set?
+    Yes, because the elbow_k is 3. 
+2a. According to your AIC results, are there 3 species of iris represented in the iris data set?
+    Yes, because the aic_elbow_k is 3. 
+2b. According to your BIC results, are there 3 species of iris represented in the iris data set?
+    Yes, because the bic_elbow_k is 3. 
